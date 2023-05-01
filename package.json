@@ -1,0 +1,28 @@
+{
+  "name": "@bad-software/ld53",
+  "description": "Ludum Dare 53 monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "yarn@3.5.0",
+  "scripts": {
+    "dev": "concurrently -c #772d8b,#f3a712,#7fc8f8 \"yarn:app dev\" \"yarn:server dev\"",
+    "lint": "eslint . --config ./.eslintrc.cjs --fix",
+    "start": "concurrently -c #772d8b,#f3a712,#7fc8f8 \"yarn:app start\" \"yarn:server start\"",
+    "app": "yarn workspace @bad-software/ld53-app",
+    "server": "yarn workspace @bad-software/ld53-server"
+  },
+  "workspaces": [
+    "apps/**/*",
+    "packages/**/*"
+  ],
+  "devDependencies": {
+    "@bad-software/eslint-config": "^0.3.0",
+    "@feathersjs/cli": "=5.0.1",
+    "concurrently": "=7.6.0",
+    "eslint": "=8.36.0",
+    "eslint-plugin-import": "=2.27.5",
+    "eslint-plugin-jsdoc": "=40.0.3",
+    "eslint-plugin-promise": "=6.1.1",
+    "npm-check-updates": "^16.10.9"
+  }
+}

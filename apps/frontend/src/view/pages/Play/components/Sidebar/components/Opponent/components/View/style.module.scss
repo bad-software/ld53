@@ -1,0 +1,24 @@
+@use 'Styles/utils/theme';
+
+
+// Flat by default, add .card to pop out.
+.body {
+  /* Display */
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+}
+
+.canvas {
+  /* Display */
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  justify-content: center;
+
+  /* Size */
+  aspect-ratio: 1;
+  height: 100%;
+  width: 100%;
+}

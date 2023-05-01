@@ -1,0 +1,54 @@
+
+:root {
+  --viewHeight: 100vh;
+}
+
+.content {
+  &_container {
+    /* Display */
+    display: grid;
+    grid-area: main;
+    grid-template-areas: 'nav content';
+    grid-template-columns: auto 1fr;
+    overflow-y: auto;
+  }
+}
+
+.defaultLayout {
+  /* Display */
+  display: grid;
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+
+  /* Size */
+  height: 100%;
+
+  &_wrapper {
+    /* Position */
+    position: relative;
+
+    /* Size */
+    // Overriden in JavaScript to account for mobile browsers.
+    // Fallback for browsers which don't support custom properties.
+    height: 100vh;
+    height: calc(var(--viewHeight, 1vh) * 100);
+    width: 100vw;
+  }
+}
+
+
+.unauthenticated {
+  /* Display */
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  /* Size */
+  min-height: 100%;
+}

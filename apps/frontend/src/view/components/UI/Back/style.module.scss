@@ -1,0 +1,23 @@
+
+.body {
+  /* Animation */
+  transition: background-color var(--transition);
+
+  /* Display */
+  padding: 1rem;
+
+  /* Position */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+
+  /* Text */
+  font-size: 1rem;
+
+  /* UX */
+  cursor: pointer;
+  user-select: none;
+
+  &:hover { background: rgba(0,0,0,0.1)}
+}

@@ -1,0 +1,107 @@
+@use 'Styles/utils/theme';
+
+
+// Flat by default, add .card to pop out.
+.body {
+  --border: 0.5px solid var(--overlay);
+
+  /* Display */
+  border-bottom: var(--border);
+  //border-radius: 4px;
+  border-top: var(--border);
+  display: grid;
+  grid-template-areas:
+      'header'
+      'body'
+      'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  &:first-child { border-top-width: 1px }
+  &:last-child { border-bottom-width: 1px }
+}
+
+.card {
+  /* Display */
+  border: 1px solid var(--overlay);
+  border-radius: 2px;
+  box-shadow: var(--shadow);
+
+  /* Position */
+  margin: 1rem;
+}
+
+.content {
+  /* Display */
+  grid-area: body;
+  overflow-x: clip;
+}
+
+.footer { grid-area: footer }
+
+.header {
+  /* Display */
+  border-bottom: var(--overlay2);
+  display: flex;
+  flex-flow: row nowrap;
+  grid-area: header;
+
+  /* Size */
+  // Allow to collapse.
+  min-width: 0;
+
+  /* UX */
+  user-select: none;
+}
+
+
+/* Exported helper classes for other modules */
+
+.avatar {
+  --img: '';
+
+  /* Display */
+  background-image: var(--img);
+  background-position: center;
+  background-size: cover;
+
+  /* Size */
+  aspect-ratio: 1;
+  height: 1em;
+
+  /* Position */
+  // Fix slight offset.
+  transform: translateY( 2px );
+}
+
+.interactive {
+  /* Animation */
+  transition-duration: var(--transition);
+  transition-property: border-color, color;
+
+  /* UX */
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--textOvelay);
+    @include theme.darkBlack { border-color: var(--primary)}
+
+    & > .header {
+      border-color: rgba( var(--primaryRGB), 0.25 );
+
+      & > .name {
+        color: var(--textOvelay);
+        @include theme.darkBlack { color: var(--primary)}
+      }
+    }
+  }
+}
+
+.name {
+  /* Display */
+  padding: var(--defaultPadding);
+
+  /* Text */
+  font-weight: bold;
+  white-space: pre;
+}

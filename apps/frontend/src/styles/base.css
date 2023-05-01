@@ -1,0 +1,29 @@
+
+*, *:before, *:after { box-sizing: inherit }
+html { box-sizing: border-box }
+html, body { margin: 0 }
+
+::selection {
+  background: var(--primary);
+  color: var(--primaryTextColor);
+}
+
+body {
+  /* Display */
+  background: var(--background);
+  /* x-overflow is bad app design. */
+  overflow-x: hidden;
+
+  /* Position */
+  margin: 0;
+
+  /* Size */
+  min-width: 350px;
+
+  /* Text */
+  color: var(--text);
+  font-family: 'Work Sans', sans-serif;
+
+  /* UX */
+  user-select: none;
+}

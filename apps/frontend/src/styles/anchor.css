@@ -1,0 +1,11 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:link,
+a:visited { color: var(--text)}
+
+a:hover,
+a:active,
+a:focus { color: var(--tertiary)}

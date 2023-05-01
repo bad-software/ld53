@@ -1,0 +1,108 @@
+@use 'Styles/utils/mixins';
+@use 'Styles/utils/theme';
+
+
+$borderRadius: 8px;
+$borderSize: 1px;
+$transitionDuration: 150ms;
+$transitionTiming: linear;
+
+$height: 1em;
+$width: 2em;
+
+.body {
+  /* Display */
+  border-radius: $borderRadius;
+  outline: $borderSize solid black;
+
+  /* Position */
+  position: relative;
+
+  /* Size */
+  height: $height;
+  width: $width;
+
+  &:focus-within {
+    outline-color: var(--primary);
+  }
+}
+
+.input {
+  /* Animation */
+  transition: background-color $transitionDuration $transitionTiming;
+
+  /* Display */
+  opacity: 0;
+  padding: 0;
+
+  /* Position */
+  margin: 0;
+
+  /* Size */
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  /* Animation */
+  transition: background-color $transitionDuration $transitionTiming;
+
+  /* Display */
+  align-items: center;
+  background-color: #ccc;
+  border-radius: $borderRadius;
+  box-sizing: content-box;
+  display: flex;
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.75);
+
+  flex-flow: row nowrap;
+
+  /* Position */
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  /* UX */
+  cursor: pointer;
+
+  &_knob {
+    /* Animation */
+    transition-timing-function: ease-out;
+    transition-property: background, margin-left, transform;
+    transition-duration: $transitionDuration;
+    transform: translateX( -$borderSize );
+
+    /* Display */
+    background: var(--background);
+    outline: $borderSize solid black;
+    border-radius: 50%;
+    content: '';
+
+    /* Size */
+    aspect-ratio: 1;
+    height: 125%;
+
+    &::after {
+      @include mixins.absoluteFull;
+      @include mixins.shade;
+
+      /* UX */
+      pointer-events: none;
+    }
+
+    .slider > & {
+      .input:checked + & {
+        margin-left: 100%;
+        transform: translateX( calc( -100% + #{$borderSize}));
+
+        @include theme.darkBlack {
+          outline-color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .input:checked + & { background-color: var(--primary)}
+}

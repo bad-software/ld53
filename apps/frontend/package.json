@@ -1,0 +1,46 @@
+{
+  "name": "@bad-software/ld53-app",
+  "version": "0.1.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bad-software/ld53.git",
+    "directory": "packages/app"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^5.57.1",
+    "@babylonjs/loaders": "^5.57.1",
+    "@bad-software/ld53-config": "workspace:*",
+    "@feathers-plus/cache": "^1.4.0",
+    "@feathersjs/authentication-client": "^5.0.5",
+    "@feathersjs/feathers": "^5.0.5",
+    "@feathersjs/socketio-client": "^5.0.5",
+    "@soulofmischief/array.js": "^0.22.0",
+    "@soulofmischief/async.js": "^5.0.0",
+    "@soulofmischief/js-utils": "=0.22.0",
+    "@soulofmischief/proxy.js": "^0.6.0",
+    "@soulofmischief/strings": "^0.10.0",
+    "crypto-js": "^4.1.1",
+    "feathers-hooks-common": "^7.0.3",
+    "j2c": "^0.11.3",
+    "libmq": "^0.1.5",
+    "lodash-es": "^4.17.21",
+    "mithril": "=3.0.0-next.12",
+    "random": "^4.1.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "socket.io-client": "^4.6.1",
+    "verge": "^1.10.2"
+  },
+  "devDependencies": {
+    "sass": "=1.62.1",
+    "vite": "=4.3.3",
+    "vite-plugin-gltf": "=3.1.0",
+    "vite-plugin-top-level-await": "=1.3.0",
+    "vite-plugin-wasm": "=3.2.2"
+  }
+}

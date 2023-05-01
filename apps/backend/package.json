@@ -1,0 +1,83 @@
+{
+  "name": "@bad-software/ld53-server",
+  "description": "Ludum Dare 53 backend",
+  "version": "0.1.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bad-software/ld53.git",
+    "directory": "packages/server"
+  },
+  "feathers": {
+    "language": "js",
+    "packager": "yarn",
+    "database": "sqlite",
+    "framework": "koa",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "typebox"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node src",
+    "dev": "nodemon src",
+    "mocha": "cross-env NODE_ENV=test mocha test --recursive --exit",
+    "test": "cross-env NODE_ENV=test npm run migrate && npm run mocha",
+    "bundle:client": "npm pack --pack-destination public",
+    "migrate": "knex migrate:latest",
+    "migrate:make": "knex migrate:make"
+  },
+  "imports": {
+    "#App": "./src/app.js",
+    "#OpenAI": "./src/openai.js"
+  },
+  "dependencies": {
+    "@bad-software/ld53-config": "workspace:*",
+    "@feathersjs/adapter-commons": "^5.0.5",
+    "@feathersjs/authentication": "^5.0.5",
+    "@feathersjs/authentication-local": "^5.0.5",
+    "@feathersjs/authentication-oauth": "^5.0.5",
+    "@feathersjs/commons": "^5.0.5",
+    "@feathersjs/configuration": "^5.0.5",
+    "@feathersjs/errors": "^5.0.5",
+    "@feathersjs/feathers": "^5.0.5",
+    "@feathersjs/knex": "^5.0.5",
+    "@feathersjs/koa": "^5.0.5",
+    "@feathersjs/schema": "^5.0.5",
+    "@feathersjs/socketio": "^5.0.5",
+    "@feathersjs/transport-commons": "^5.0.5",
+    "@feathersjs/typebox": "^5.0.5",
+    "@seald-io/nedb": "^4.0.1",
+    "config": "^3.3.9",
+    "dauria": "^2.0.0",
+    "dotenv-flow": "^3.2.0",
+    "feathers-blob": "^2.6.0",
+    "feathers-hooks-common": "^7.0.3",
+    "feathers-nedb": "^6.0.0",
+    "fs-blob-store": "^6.0.0",
+    "knex": "^2.4.2",
+    "mime-types": "^2.1.35",
+    "multer": "^1.4.5-lts.1",
+    "nedb": "^1.8.0",
+    "openai": "^3.2.1",
+    "sqlite3": "^5.1.6",
+    "winston": "latest"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "5.0.5",
+    "@feathersjs/rest-client": "^5.0.5",
+    "@types/config": "^3",
+    "@types/dotenv-flow": "^3",
+    "@types/node": "^18.16.3",
+    "axios": "^1.4.0",
+    "cross-env": "latest",
+    "mocha": "^10.2.0",
+    "nodemon": "latest"
+  }
+}

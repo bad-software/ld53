@@ -1,0 +1,79 @@
+
+.body {
+  /* Display */
+  overflow-x: hidden;
+  overflow-y: visible;
+  // Prevent clipped shadow.
+  padding-bottom: 0.25rem;
+
+  /* Position */
+  position: absolute;
+  bottom: var(--defaultPadding);
+  right: 0;
+  margin-left: auto;
+  z-index: 10;
+
+  /* Size */
+  width: max-content;
+}
+
+
+.card {
+  /* Display */
+  background: var(--background);
+  border: 1px solid var(--headerBorderColor) !important;
+
+  /* Position */
+  margin: 0.75rem 1rem;
+
+  & > header { border: none }
+}
+
+
+.item {
+  --margin: 0.5em;
+
+  /* Animation */
+  animation: SlideFromBottomToast 100ms ease-out;
+  transform-origin: center;
+  transition: color var(--transition) ease-out;
+
+  /* Display */
+  // Fixes weird animation delay bug
+  box-sizing: content-box;
+  //background: var(--background);
+  //border: 1px solid var(--text);
+  padding: 0.75em;
+  overflow: hidden;
+
+  /* Position */
+  margin: var(--margin);
+
+  /* Text */
+  color: var(--text);
+  font-weight: bold;
+
+  /* UX */
+  cursor: pointer;
+  user-select: none;
+
+  &:hover { color: rgba( var(--textRGB), 0.4)}
+}
+
+
+/*
+ * animating height will smoothly push other elements away.
+ * min-height is animatable.
+ * transform for flair.
+ */
+@keyframes SlideFromBottomToast {
+  0% {
+    max-height: 0;
+    transform: scale( 0.95 );
+  }
+
+  100% {
+    max-height: 100vh;
+    transform: scale( 1 );
+  }
+}

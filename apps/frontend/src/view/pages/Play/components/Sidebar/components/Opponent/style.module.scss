@@ -1,0 +1,9 @@
+@use 'Styles/utils/theme';
+
+
+// Flat by default, add .card to pop out.
+.body {
+  /* Display */
+  display: flex;
+  flex-flow: column nowrap;
+}

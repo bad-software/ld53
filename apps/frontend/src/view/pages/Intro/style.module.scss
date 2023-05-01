@@ -1,0 +1,21 @@
+
+.body {
+  /* Display */
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  /* Size */
+  height: 100%;
+  width: 100%;
+}
+
+.link {
+  /* Text */
+  color: #007bff;
+  font-weight: bold;
+
+  /* UX */
+  cursor: pointer;
+}

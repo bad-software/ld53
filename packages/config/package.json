@@ -1,0 +1,16 @@
+{
+  "name": "@bad-software/ld53-config",
+  "description": "Ludum Dare 53 common configuration",
+  "version": "0.1.0",
+  "type": "commonjs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bad-software/ld53.git",
+    "directory": "packages/config"
+  },
+  "dependencies": {
+    "config": "^3.3.9",
+    "lodash": "^4.17.21"
+  }
+}

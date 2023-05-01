@@ -1,0 +1,35 @@
+@use 'Styles/utils/theme';
+
+
+.body {
+  /* Display */
+  align-items: center;
+  border-right: 2px solid black;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  padding: 8px;
+}
+
+.canvas {
+  /* Display */
+  border: 2px solid white;
+
+  /* Position */
+  margin: 0 20px;
+
+  /* Size */
+  // Standard grid size is 10x20.
+  // TODO: Make this dynamic.
+  aspect-ratio: 510 / 600;
+  max-height: 100%;
+
+  &_container {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,91 @@
+@use 'Styles/utils/theme';
+@use 'Styles/utils/mixins';
+
+
+.body {
+  --backgroundColor: var(--text);
+  --color: var(--background);
+
+  /* Animation */
+  transition-duration: var(--transition);
+  transition-property: background, box-shadow, color;
+
+  /* Display */
+  align-self: center;
+  background: var(--backgroundColor);
+  border: none;
+  box-shadow: var(--shadow);
+  padding: 0.75em 1em;
+
+  /* Position */
+  margin-bottom: 8px;
+  position: relative;
+
+  /* Size */
+  min-width: 6em;
+  //width: 100%;
+
+  /* Text */
+  color: var(--color);
+  font-size: 1rem;
+
+  /* UX */
+  cursor: pointer;
+
+  @include mixins.hover {
+    //background: var(--overlay);
+    //color: var(--text);
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: var(--insetShadow);
+  }
+}
+
+.disabled {
+  --progress: 0%;
+
+  /* Display */
+  background: rgba(0,0,0,0.2);
+  color: white;
+
+  /* UX */
+  cursor: not-allowed !important;
+
+  @include theme.darkBlack {
+    background: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
+  }
+
+  &::after {
+    // Progress bar
+    background: var(--primary);
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    width: var(--progress);
+    z-index: 10;
+  }
+}
+
+.primary {
+  --backgroundColor: var(--primary);
+  --color: var(--primaryTextColor);
+}
+
+.secondary {
+  --backgroundColor: var(--secondary);
+  --color: var(--secondaryTextColor);
+}
+
+.tertiary {
+  --backgroundColor: var(--tertiary);
+  --color: var(--tertiaryTextColor);
+}
+
+.quaternary {
+  --backgroundColor: var(--quaternary);
+  --color: var(--quaternaryTextColor);
+}

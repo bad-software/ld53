@@ -1,0 +1,74 @@
+:local {
+  --color: var(--text);
+}
+
+.body {
+  $verticalPadding: 32px;
+
+  /* Display */
+  align-items: center;
+  grid-area: main;
+  justify-content: center;
+  padding-bottom: $verticalPadding;
+  padding-top: $verticalPadding;
+
+  /* Size */
+  height: 100%;
+
+  /* Text */
+  color: var(--color);
+}
+
+.caption { color: var(--text)}
+
+.form {
+  /* Display */
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2rem;
+
+  /* Size */
+  max-width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.title {
+  /* Display */
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.titleLogo {
+  --size: 240px;
+
+  /* Position */
+  margin-bottom: 16px;
+
+  /* Size */
+  aspect-ratio: 285 / 100;
+  max-width: 100vw;
+  width: var(--size);
+
+  /* SVG */
+  fill: var(--color);
+}
+
+.titleText {
+  /* Position */
+  margin: 0;
+
+  /* Text */
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+[data-theme="dark"] {
+  --color: var(--primary);
+}
