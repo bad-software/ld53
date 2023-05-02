@@ -193,14 +193,14 @@ export class Game {
     if ( player === 'player' ) {
       this.opponent.speak( 'win' )
       audioManager.play( sfx.LOSE, 0.8 )
-      Toast.add( `${User.current().username} loses!` )
+      Toast.add( 'Sam wins!' )
 
       setTimeout(() => this.showLoseModal(), 6000 )
 
     } else {
       this.opponent.speak( 'lose' )
       audioManager.play( sfx.WIN, 0.8 )
-      Toast.add( 'Sam wins!' )
+      Toast.add( `${User.current().username} wins!` )
 
       setTimeout(() => this.showWinModal(), 6000 )
     }
