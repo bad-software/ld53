@@ -1,7 +1,6 @@
 //noinspection ES6RedundantAwait
 
 import m from 'mithril'
-import { serverConfig } from '@bad-software/ld53-config'
 import { client } from 'Client'
 import { Button } from 'Components/UI/Button'
 import { Toast } from 'Components/Toast'
@@ -22,8 +21,6 @@ import {
 
 
 const
-  { api } = serverConfig,
-
   Signup = `.${page}.${body}`,
   Form = `form.${form}`,
   Input = `input.${input}`,
@@ -92,7 +89,7 @@ async function onsubmit( e ) {
 
     // Create a user account.
     await client
-      .service( api.users )
+      .service( 'users' )
       .create({
         username,
         password,

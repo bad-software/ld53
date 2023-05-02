@@ -43,7 +43,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@bad-software/eslint-config", "virtual:9a5aefae5726ea68ed12b9b1c8efce5c4fc0f4687c5fd69adbec7abd54ae497648e1dc46961a91e12e841ccc99c6853879a529b62a0973e3a71c09c9bcb66490#npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a"],\
             ["@feathersjs/cli", "npm:5.0.1"],\
             ["concurrently", "npm:7.6.0"],\
             ["eslint", "npm:8.36.0"],\
@@ -100,42 +99,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["@bad-software/eslint-config", [\
-        ["npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a", {\
-          "packageLocation": "./.yarn/cache/@bad-software-eslint-config-npm-0.3.0-c8326e6d23-dea51f8d71.zip/node_modules/@bad-software/eslint-config/",\
-          "packageDependencies": [\
-            ["@bad-software/eslint-config", "npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:9a5aefae5726ea68ed12b9b1c8efce5c4fc0f4687c5fd69adbec7abd54ae497648e1dc46961a91e12e841ccc99c6853879a529b62a0973e3a71c09c9bcb66490#npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a", {\
-          "packageLocation": "./.yarn/__virtual__/@bad-software-eslint-config-virtual-cbe8aafb24/0/cache/@bad-software-eslint-config-npm-0.3.0-c8326e6d23-dea51f8d71.zip/node_modules/@bad-software/eslint-config/",\
-          "packageDependencies": [\
-            ["@bad-software/eslint-config", "virtual:9a5aefae5726ea68ed12b9b1c8efce5c4fc0f4687c5fd69adbec7abd54ae497648e1dc46961a91e12e841ccc99c6853879a529b62a0973e3a71c09c9bcb66490#npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a"],\
-            ["@types/eslint", null],\
-            ["@types/eslint-plugin-jsdoc", null],\
-            ["@types/eslint-plugin-promise", null],\
-            ["eslint", "npm:8.36.0"],\
-            ["eslint-plugin-jsdoc", "virtual:9a5aefae5726ea68ed12b9b1c8efce5c4fc0f4687c5fd69adbec7abd54ae497648e1dc46961a91e12e841ccc99c6853879a529b62a0973e3a71c09c9bcb66490#npm:40.0.3"],\
-            ["eslint-plugin-promise", "virtual:9a5aefae5726ea68ed12b9b1c8efce5c4fc0f4687c5fd69adbec7abd54ae497648e1dc46961a91e12e841ccc99c6853879a529b62a0973e3a71c09c9bcb66490#npm:6.1.1"]\
-          ],\
-          "packagePeers": [\
-            "@types/eslint-plugin-jsdoc",\
-            "@types/eslint-plugin-promise",\
-            "@types/eslint",\
-            "eslint-plugin-jsdoc",\
-            "eslint-plugin-promise",\
-            "eslint"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["@bad-software/ld53", [\
         ["workspace:.", {\
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@bad-software/ld53", "workspace:."],\
-            ["@bad-software/eslint-config", "virtual:9a5aefae5726ea68ed12b9b1c8efce5c4fc0f4687c5fd69adbec7abd54ae497648e1dc46961a91e12e841ccc99c6853879a529b62a0973e3a71c09c9bcb66490#npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a"],\
             ["@feathersjs/cli", "npm:5.0.1"],\
             ["concurrently", "npm:7.6.0"],\
             ["eslint", "npm:8.36.0"],\

@@ -31,17 +31,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bad-software/eslint-config@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@bad-software/eslint-config@npm:0.3.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40bad-software%2Feslint-config%2F0.3.0%2Fd5cea44f526b984862ebacfe9b4e585195e91f7a"
-  peerDependencies:
-    eslint: ">= 8"
-    eslint-plugin-jsdoc: "*"
-    eslint-plugin-promise: "*"
-  checksum: dea51f8d711d9c97fa9b4ea082a7a53fca15b69e30b9bdf57f62a82b737e30ba76412cf74f398c187bcb473b32d256d92eae0f571f811987e1ebbfe6afecc6d0
-  languageName: node
-  linkType: hard
-
 "@bad-software/ld53-app@workspace:apps/frontend":
   version: 0.0.0-use.local
   resolution: "@bad-software/ld53-app@workspace:apps/frontend"
@@ -135,7 +124,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@bad-software/ld53@workspace:."
   dependencies:
-    "@bad-software/eslint-config": ^0.3.0
     "@feathersjs/cli": =5.0.1
     concurrently: =7.6.0
     eslint: =8.36.0

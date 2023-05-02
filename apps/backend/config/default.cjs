@@ -1,11 +1,5 @@
-const {
-  appConfig,
-  serverConfig,
-} = require( '@bad-software/ld53-config' )
-
-
-const { port, url } = serverConfig
-
+const port = 3401
+const url = 'https://ld53-backend.cos.lol'
 
 module.exports = {
   port,
@@ -13,7 +7,7 @@ module.exports = {
   public: './public/',
   origins: [
     url,
-    appConfig.url,
+    'https://ld53-seven.vercel.app',
   ],
   paginate: {
     default: 10,

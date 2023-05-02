@@ -2,11 +2,6 @@ import config from '@bad-software/ld53-config'
 
 
 const
-  { appConfig, serverConfig } = config,
-  { port } = appConfig
-
-
-const
   _3DRegex = /\.(dds|gl(b|tf)|vrm)$/,
   AudioRegex = /\.(mp3|ogg|wav)$/
 
@@ -44,12 +39,12 @@ export default {
   },
 
   server: {
-    port,
+    port: '3400',
     fs: { strict: true },
 
     proxy: {
       '/api/v1': {
-        target: serverConfig.url,
+        target: 'https://ld53-backend.cos.lol',
         changeOrigin: true,
         rewrite: path => path.replace( /^\/api\/v1/, '' ),
       },

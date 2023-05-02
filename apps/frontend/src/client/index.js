@@ -1,4 +1,3 @@
-import { serverConfig } from '@bad-software/ld53-config'
 import auth from '@feathersjs/authentication-client'
 import { feathers } from '@feathersjs/feathers'
 import socketio from '@feathersjs/socketio-client'
@@ -18,7 +17,7 @@ export const
 
 
 ;[
-  socketio( io( serverConfig.url)),
+  socketio( io( 'https://ld53-backend.cos.lol' )),
   //socketio( io( config.server.socket )),
   //rx({ idField: config.server.idField }),
   auth({ storage: localStorage }),

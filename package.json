@@ -16,7 +16,6 @@
     "packages/**/*"
   ],
   "devDependencies": {
-    "@bad-software/eslint-config": "^0.3.0",
     "@feathersjs/cli": "=5.0.1",
     "concurrently": "=7.6.0",
     "eslint": "=8.36.0",
