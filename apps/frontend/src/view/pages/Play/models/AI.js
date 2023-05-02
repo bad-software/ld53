@@ -22,7 +22,7 @@ export class AI {
     // Move left.
     return flip()
       ? flip()
-        ? flip( 0.67 )
+        ? flip( 0.9 )
           ? 'left'
           : 'right'
         : 'down'

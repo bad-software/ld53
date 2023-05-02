@@ -187,13 +187,27 @@ export class Game {
     requestAnimationFrame( _loop )
   }
 
-  lose( player ) {
+  async lose( player ) {
     this.end()
 
     if ( player === 'player' ) {
       this.opponent.speak( 'win' )
       audioManager.play( sfx.LOSE, 0.8 )
       Toast.add( 'Sam wins!' )
+
+      // Get current high score.
+      const highScore = await client
+        .service( 'users' )
+        .get( id )
+        .then( user => user.highScore )
+
+      console.log( 'highScore', highScore )
+
+      client
+        .service( 'users' )
+        .patch( id, {
+          highScore: Math.max( highScore, this.player.score ),
+        })
 
       setTimeout(() => this.showLoseModal(), 6000 )
 
