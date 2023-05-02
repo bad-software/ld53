@@ -21,8 +21,8 @@ export class AI {
   getNextCommand() {
     // Move left.
     return flip()
-      ? flip()
-        ? flip( 0.9 )
+      ? flip( 0.9 )
+        ? flip()
           ? 'left'
           : 'right'
         : 'down'

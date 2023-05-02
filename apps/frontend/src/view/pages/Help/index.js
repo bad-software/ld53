@@ -60,7 +60,6 @@ export default () => {
 const CurrentUser = {
   view() {
     return m( 'h2.m-b-4', [
-      m( 'span', 'High Score: ' ),
       m( 'strong', `${User.current().highScore} points` ),
     ])
   }
