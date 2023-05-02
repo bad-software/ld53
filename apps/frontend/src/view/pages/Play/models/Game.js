@@ -75,12 +75,6 @@ export class Game {
       Toast.add( textResponse )
     })
 
-    setTimeout( async () => {
-      dispatchEvent( new CustomEvent( 'opponentSpeak', {
-        detail: { type: 'taunt' }
-      }))
-    }, 100 )
-
     // Listen for line clear events.
     addEventListener( 'linesCleared', e => {
       audioManager.play( sfx.CLICK, 0.7 )

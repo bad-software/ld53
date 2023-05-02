@@ -20,7 +20,7 @@ export class AudioManager {
 
     // Configure speech context and increase gain.
     this.speechGain.connect( this.speechContext.destination )
-    this.speechGain.gain.value = 3.4
+    this.speechGain.gain.value = 3
   }
 
   add( src, loop = false ) {
