@@ -200,7 +200,7 @@ export class Game {
     } else {
       this.opponent.speak( 'lose' )
       audioManager.play( sfx.WIN, 0.8 )
-      Toast.add( 'Opponent wins!' )
+      Toast.add( 'Sam wins!' )
 
       setTimeout(() => this.showWinModal(), 6000 )
     }
@@ -282,7 +282,7 @@ export class Game {
     } else {
       this.opponent.speak( 'win' )
       audioManager.play( sfx.LOSE, 0.8 )
-      Toast.add( 'Opponent wins!' )
+      Toast.add( 'Sam wins!' )
       setTimeout(() => this.showLoseModal(), 6000 )
     }
   }

@@ -7,7 +7,7 @@ const _Status = `.${body}`
 
 export const Status = {
   view( vnode ) { return m( _Status, [
-    m( 'h2.m-b-2', 'Opponent' ),
+    m( 'h2.m-b-2', 'Sam' ),
 
     // Score
     m( 'span.m-b-1', [
