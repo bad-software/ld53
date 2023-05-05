@@ -40,19 +40,24 @@ export class Game {
     this.grid2 = createGrid( this, canvas2, 'opponent' )
     this.player = new Player( this.grid1 )
     this.opponent = new AI( this.grid2 )
+  }
+
+  init() {
+    this.player.deliveries = 0
+    this.opponentDeliveries = 0
 
     // Listen for opponent speech.
-    addEventListener( 'opponentSpeak', async e => {
+    this.opponentSpeakListener = addEventListener( 'opponentSpeak', async e => {
       const textResponse = await client
         .service( 'text-generations' )
         .create({
           type: e.detail.type,
           opponent: {
-            score: this.opponent.score,
+            score: this.opponent?.score || 0,
           },
           player: {
             name: User.current().username,
-            score: this.player.score,
+            score: this.player?.score || 0,
           }
         })
 
@@ -76,7 +81,7 @@ export class Game {
     })
 
     // Listen for line clear events.
-    addEventListener( 'linesCleared', e => {
+    this.linesClearedListener = addEventListener( 'linesCleared', e => {
       audioManager.play( sfx.CLICK, 0.7 )
 
       // Notify player.
@@ -93,7 +98,7 @@ export class Game {
     })
 
     // Listen for delivery events.
-    addEventListener( 'deliveryComplete', e => {
+    this.deliveryCompleteListener = addEventListener( 'deliveryComplete', e => {
       // Play sound.
       audioManager.play( sfx.DELIVERY, 0.5 )
 
@@ -131,24 +136,6 @@ export class Game {
         this.player.grid.addGarbage( e.detail.count )
       }
     })
-
-    // Test garbage.
-    /*setInterval(() => {
-      // Dispatch delivery event.
-      dispatchEvent( new CustomEvent( 'deliveryComplete', {
-        detail: {
-          color: flip() ? 'red' : 'blue',
-          count: flip() ? 1 : 2,
-          player: flip() ? 'player' : 'opponent',
-          row: 0,
-        }
-      }))
-    }, 2000 )*/
-  }
-
-  init() {
-    this.player.deliveries = 0
-    this.opponentDeliveries = 0
   }
 
   draw() {
@@ -158,6 +145,22 @@ export class Game {
 
   end() {
     this.pause()
+
+    // Remove event listeners.
+    if ( this.opponentSpeakListener ) {
+      removeEventListener( 'linesCleared', this.linesClearedListener )
+      this.opponentSpeakListener = null
+    }
+
+    if ( this.linesClearedListener ) {
+      removeEventListener( 'deliveryComplete', this.deliveryCompleteListener )
+      this.linesClearedListener = null
+    }
+
+    if ( this.deliveryCompleteListener ) {
+      removeEventListener( 'opponentSpeak', this.opponentSpeakListener )
+      this.deliveryCompleteListener = null
+    }
   }
 
   play() {
@@ -195,6 +198,8 @@ export class Game {
       audioManager.play( sfx.LOSE, 0.8 )
       Toast.add( 'Sam wins!' )
 
+      const { id } = User.current()
+
       // Get current high score.
       const highScore = await client
         .service( 'users' )
@@ -221,33 +226,26 @@ export class Game {
   }
 
   showLoseModal() {
-    const result = confirm(
+    alert(
       `You lose! Final score: ${this.player.score}! Play again?`
     )
 
-    if ( result === true ) {
-      restart()
-    } else {
-      m.route.set( paths.home )
-    }
+    location.reload()
   }
 
   showWinModal() {
-    const result = confirm(
+    alert(
       `You win! Final score: ${this.player.score}! Play again?`
     )
 
-    if ( result === true ) {
-      restart()
-    } else {
-      m.route.set( paths.home )
-    }
+    location.reload()
   }
 
   start() {
     audioManager.stopAll()
     audioManager.play( music.MAIN_MUSIC, 0.7 )
 
+    this.init()
     this.play()
   }
 
